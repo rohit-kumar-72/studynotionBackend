@@ -20,14 +20,11 @@ const PORT = process.env.PORT || 4000;
 database.connectdb();
 
 // middleware use
-app.use(cors({
-    origin: "https://studynotion-azure.vercel.app/"
-}))
 app.use(express.json());
 app.use(cookieParse());
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://studynotion-azure.vercel.app/",
         credentials: true
     })
 );
