@@ -131,7 +131,8 @@ exports.signup = async (req, res) => {
         } else if (otp != recentOtp[0].otp) {
             return res.status(400).json({
                 success: false,
-                message: "OTP doesn't match"
+                message: "OTP doesn't match",
+                recentOtp
             })
         }
 
