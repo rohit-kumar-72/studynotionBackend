@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const cookieParse = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
@@ -20,6 +21,9 @@ const PORT = process.env.PORT || 4000;
 database.connectdb();
 
 // middleware use
+app.use(cors({
+    origin: "https://studynotion-azure.vercel.app/"
+}))
 app.use(express.json());
 app.use(cookieParse());
 app.use(
